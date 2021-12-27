@@ -66,7 +66,12 @@ const ProblemList = () => {
             </div>
             <button onClick={handleClick}>Create</button>
             {data.map((p) => (
-                <li>{p.title}</li>
+                <>
+                    <li>{p.title}</li>
+                    {p.pictures.map((picture) => (
+                        <img src={'http://localhost:8000/' + picture.image} alt="" width={100} />
+                    ))}
+                </>
             ))}
         </div>
     );
